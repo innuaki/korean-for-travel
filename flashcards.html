@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Flashcards</h1>
+    </header>
+    <main>
+        <div class="card" id="flashcard">
+            <p id="korean-word">화장실 어디에요?</p>
+            <p id="translation" style="display: none;">Where is the restroom?</p>
+            <button onclick="showTranslation()">Show Translation</button>
+            <button onclick="nextCard()">Next</button>
+        </div>
+    </main>
+    <script>
+        const flashcards = [
+            { korean: "화장실 어디에요?", translation: "Where is the restroom?" },
+            { korean: "감사합니다", translation: "Thank you" },
+        ];
+        let currentCard = 0;
+
+        function showTranslation() {
+            document.getElementById('translation').style.display = '
