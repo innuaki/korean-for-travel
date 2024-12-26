@@ -1,0 +1,36 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff8dc;
+    color: #333;
+}
+header {
+    text-align: center;
+    background-color: #ffd700;
+    padding: 20px;
+}
+h1 {
+    color: #ff4500;
+}
+.intro, #quiz, .card {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px dashed #ffa500;
+    border-radius: 10px;
+    background-color: #fff5c3;
+}
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #ffb347;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #ffa500;
+}
