@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz: Match the Phrase</h1>
+    </header>
+    <main>
+        <div id="quiz">
+            <p id="question">What does "감사합니다" mean?</p>
+            <button onclick="checkAnswer(this)" data-correct="false">Goodbye</button>
+            <button onclick="checkAnswer(this)" data-correct="true">Thank you</button>
+            <button onclick="checkAnswer(this)" data-correct="false">Excuse me</button>
+        </div>
+        <p id="feedback"></p>
+        <button onclick="nextQuestion()">Next Question</button>
+    </main>
+    <script>
+        const questions = [
+            { question: "What does '감사합니다' mean?", options: ["Goodbye", "Thank you", "Excuse me"], correct: 1 },
+            { question: "What does '화장실 어디에요?' mean?", options: ["Where is the restroom?", "Thank you", "How are you?"], correct: 0 }
+        ];
+        let currentQuestion = 0;
+
+        function loadQuestion() {
+            const q = questions[currentQuestion];
+            document.getElementById('question').textContent = q.question;
+            const buttons = document.querySelectorAll('#quiz button');
+            buttons.forEach((btn, index) => {
+                btn.textContent = q.options[index];
+                btn.dataset.correct = index === q.correct;
+            });
+            document.getElementById('feedback').textContent = '';
+        }
+
+        function checkAnswer(button) {
+            const isCorrect = button.dataset.correct === "true";
+            document.getElementById('feedback').textContent = isCorrect ? "Correct!" : "Try again!";
+        }
+
+        function nextQuestion() {
+            currentQuestion = (currentQuestion + 1) % questions.length;
+            loadQuestion();
+        }
+
+        window.onload = loadQuestion;
+    </script>
+</body>
+</html>
