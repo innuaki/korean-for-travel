@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phrases</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Airport Phrases</h1>
+    </header>
+    <main>
+        <ul class="phrases">
+            <li>
+                <span>Where is the restroom? — 화장실 어디에요? (Hwajangsil eodieyo?)</span>
+                <button class="play-btn" onclick="playAudio('restroom')">▶️</button>
+            </li>
+            <li>
+                <span>Thank you — 감사합니다 (Gamsahamnida)</span>
+                <button class="play-btn" onclick="playAudio('thank_you')">▶️</button>
+            </li>
+        </ul>
+        <button class="learn-btn" onclick="location.href='flashcards.html'">Start Learning</button>
+    </main>
+    <script>
+        function playAudio(phrase) {
+            const audio = new Audio(`audio/${phrase}.mp3`);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
