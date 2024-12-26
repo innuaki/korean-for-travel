@@ -26,4 +26,15 @@
         let currentCard = 0;
 
         function showTranslation() {
-            document.getElementById('translation').style.display = '
+            document.getElementById('translation').style.display = 'block';
+        }
+
+        function nextCard() {
+            currentCard = (currentCard + 1) % flashcards.length;
+            document.getElementById('korean-word').textContent = flashcards[currentCard].korean;
+            document.getElementById('translation').textContent = flashcards[currentCard].translation;
+            document.getElementById('translation').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
