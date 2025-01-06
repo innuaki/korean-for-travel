@@ -1,87 +1,102 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #FFEB57; /* Жёлтый фон */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #FFD44F; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden; 
 }
 
 .container {
-    max-width: 600px;
-    text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-h1 {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0;
-    color: black;
-    text-transform: uppercase;
+header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+  text-transform: uppercase;
+  color: #000000;
 }
 
-h2 {
-    font-size: 40px;
-    font-weight: bold;
-    margin: 10px 0;
-    color: black;
+header h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin: 10px 0;
+  color: #000000;
 }
 
-.subtitle {
-    font-size: 18px;
-    margin: 5px 0 20px;
-    color: black;
+header p {
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px 0;
+  color: #FFFFFF;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-.stars {
-    font-size: 24px;
-    color: black;
-    margin-bottom: 20px;
+header h2::before,
+header h2::after {
+  content: '✨';
+  margin: 0 10px;
+  font-size: 20px;
+  color: #000000;
 }
 
-.image-container {
-    position: relative;
-    display: inline-block;
-    margin: 20px 0;
+.image-section {
+  position: relative;
+  margin-top: 20px;
 }
 
 .girl-image {
-    width: 200px;
-    border-radius: 50%;
+  width: 250px;
+  height: auto;
 }
 
 .speech-bubble {
-    position: absolute;
-    top: -30px;
-    right: -80px;
-    background: white;
-    border-radius: 50px;
-    padding: 10px 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    font-weight: bold;
-    color: black;
-    border: 2px solid #ddd;
+  position: absolute;
+  top: 50px;
+  right: -100px;
+  background: white;
+  border-radius: 25px;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background-color: #FF4136; /* Красная кнопка */
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+.speech-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: white;
+  margin-left: -5px;
 }
 
-.button:hover {
-    background-color: #FF5733;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+.start-button {
+  margin-top: 30px;
+  padding: 15px 40px;
+  background-color: #FF4E4E;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.start-button:hover {
+  transform: scale(1.1);
 }
